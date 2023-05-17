@@ -1,0 +1,114 @@
+:root{
+  --main-color: #532a7f;
+  --text-color: #fff;
+  --transition-delay: 0s;
+  --transition-duration: 0.3s;
+  --transition-function: ease-in
+}
+
+*{
+  box-sizing: border-box;
+  color: #fff;
+}
+
+body{
+  margin: 0;
+  font-family: 'Archivo', sans-serif;
+  background-color: #532a7f;
+}
+
+header{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+header.show-me-clicked{
+  align-items: flex-start;
+  min-height: auto;
+}
+
+.container{
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+
+header > .container{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+header > .container.show-me-clicked{
+  margin-top: 20px;
+  gap: 10px;
+}
+
+header > .container h1{
+  font-weight: 800;
+  margin: 0;
+}
+
+header > .container p{
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: 0.9rem;
+  line-height: 1.6rem;
+}
+
+header > .container button{
+  color: var(--main-color);
+  padding: 15px 29px;
+  font-weight: 500;
+  font-size: 1.05rem;
+  cursor: pointer;
+  border-style: solid;
+  border-color: var(--text-color);
+}
+
+header > .container button.show-me-clicked{
+  display: none;
+}
+
+header > .container button:hover{
+  background-color: var(--main-color);
+  color: var(--text-color);
+  border-color: var(--text-color);
+  font-weight: 600;
+  transition: all var(--transition-duration) var(--transition-function) var(--transition-delay);
+  -webkit-transition: all var(--transition-duration) var(--transition-function) var(--transition-delay);
+  -moz-transition: all var(--transition-duration) var(--transition-function) var(--transition-delay);
+  -ms-transition: all var(--transition-duration) var(--transition-function) var(--transition-delay);
+  -o-transition: all var(--transition-duration) var(--transition-function) var(--transition-delay);
+}
+
+section {
+  border: 2px solid var(--text-color);
+  display: none;
+  visibility: hidden;
+  grid-template-columns: repeat(auto-fit, minmax(348px, 1fr));
+}
+
+section.show-me-clicked{
+  display: grid;
+  visibility: visible;
+}
+
+.song-item{
+  padding: 5px 10px;
+}
+
+.song-item span:first-child{
+  background-color: #bb07fc;
+  display: inline-block;
+  min-width: 50px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.song-item span:last-child{
+  margin-left: 10px;
+}
