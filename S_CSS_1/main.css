@@ -90,6 +90,7 @@ section {
   display: none;
   visibility: hidden;
   grid-template-columns: repeat(auto-fit, minmax(348px, 1fr));
+  position: relative;
 }
 
 section.show-me-clicked{
@@ -99,6 +100,7 @@ section.show-me-clicked{
 
 .song-item{
   padding: 5px 10px;
+  cursor: pointer;
 }
 
 .song-item span:first-child{
@@ -111,4 +113,9 @@ section.show-me-clicked{
 
 .song-item span:last-child{
   margin-left: 10px;
+}
+
+section iframe{
+  position: absolute;
+  visibility: hidden;
 }
