@@ -25,20 +25,32 @@ button.addEventListener("click", () => {
   button.classList.toggle("show-me-clicked");
 
   songs.map((song, i) => {
+    // div contain 2 spans for index & title
     const songDiv = document.createElement("div");
-    songDiv.innerHTML = `<div><span>#${i + 1}</span><span>${
+    // set 2 spans
+    songDiv.innerHTML = `<div><span>#${i + 1}</span><span class="song-title">${
       song.title
     }</span></div>`;
     songDiv.classList.add("song-item");
+    // add div to main section
     section.appendChild(songDiv);
 
     songDiv.addEventListener("click", () => {
       if (iframe.className == song.title) {
         iframe.className = "";
         iframe.src = "";
+        // change title color to white for all title spans if music stopped
+        document.querySelectorAll('.song-title').forEach((el)=>el.style.color = "#fff")
       } else {
+        // change title color to white for all title spans before music run
+        document.querySelectorAll('.song-title').forEach((el)=>el.style.color = "#fff")
+        // run music iframe
         iframe.src = song.src;
         iframe.className = song.title;
+
+        // change color for the song title
+        const titleSpan = songDiv.querySelectorAll('span')[1];
+        titleSpan.style.color = "#bb07fc"
       }
     });
   });
