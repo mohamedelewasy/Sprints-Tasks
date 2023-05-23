@@ -2,10 +2,15 @@
   --main-color: #ffd333;
   --second-color: #3d464d;
   --text-color: #6c757d;
+  --main-background: #f5f5f5;
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--main-background);
 }
 
 .container {
@@ -56,6 +61,7 @@ html {
 /* second nav */
 .second-nav {
   height: 80px;
+  background-color: #fff;
 }
 
 .second-nav .logo span {
@@ -219,13 +225,78 @@ html {
 
 .carousel .offer:hover img {
   transform: rotate(8deg) scale(1.2);
-  transition: transform 0.3s ease-out 0.2s;
-  -webkit-transition: transform 0.3s ease-out 0.2s;
-  -moz-transition: transform 0.3s ease-out 0.2s;
-  -ms-transition: transform 0.3s ease-out 0.2s;
-  -o-transition: transform 0.3s ease-out 0.2s;
+  transition: transform 0.3s ease-out 0s;
+  -webkit-transition: transform 0.3s ease-out 0s;
+  -moz-transition: transform 0.3s ease-out 0s;
+  -ms-transition: transform 0.3s ease-out 0s;
+  -o-transition: transform 0.3s ease-out 0s;
   -webkit-transform: rotate(8deg) scale(1.2);
   -moz-transform: rotate(8deg) scale(1.2);
   -ms-transform: rotate(8deg) scale(1.2);
   -o-transform: rotate(8deg) scale(1.2);
+}
+
+.carousel .main-carousel .data {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.carousel .main-carousel .data span:first-child {
+  font-weight: 500;
+  font-size: 3rem;
+}
+
+.carousel .main-carousel .data span:nth-child(2) {
+  width: 70%;
+  text-align: center;
+  font-weight: 300;
+}
+
+.carousel .main-carousel .data button {
+  outline: none;
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  padding: 6px 20px;
+}
+
+/* section */
+/* mini card */
+.mini-card {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 20px 28px;
+}
+
+.mini-card i {
+  color: var(--main-color);
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.mini-card span {
+  color: var(--text-color);
+  font-weight: 500;
+  font-size: 1.3rem;
+}
+
+/* features */
+.features{
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.features .container{
+  width: fit-content;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-left: auto;
+  margin-right: auto;
 }
