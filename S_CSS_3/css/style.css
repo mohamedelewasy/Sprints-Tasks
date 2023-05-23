@@ -1,0 +1,231 @@
+:root {
+  --main-color: #ffd333;
+  --second-color: #3d464d;
+  --text-color: #6c757d;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  height: 100%;
+  color: var(--text-color);
+}
+
+/* first nav */
+.first-nav {
+  height: 40px;
+  background-color: #f5f5f5;
+}
+
+.first-nav ul li:hover {
+  cursor: pointer;
+}
+.first-nav .container > ul:first-child li:hover {
+  text-decoration: underline;
+}
+
+.first-nav .container > ul:last-child > li {
+  background-color: #fff;
+  padding: 3px 15px 3px 5px;
+  position: relative;
+}
+
+.first-nav .container > ul:last-child > li::after {
+  content: "";
+  position: absolute;
+  border: 4px solid;
+  border-color: var(--text-color) transparent transparent transparent;
+  top: 12px;
+  right: 4px;
+}
+
+.first-nav .sub-list {
+  position: absolute;
+  width: 100%;
+  top: 35px;
+  right: 0;
+  min-width: fit-content;
+}
+
+.first-nav .sub-list li {
+  color: var(--text-color);
+}
+
+/* second nav */
+.second-nav {
+  height: 80px;
+}
+
+.second-nav .logo span {
+  font-weight: 900;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+}
+
+.second-nav .logo span:first-child {
+  padding: 0 10px 0 5px;
+  color: var(--main-color);
+  background-color: var(--second-color);
+}
+
+.second-nav .logo span:last-child {
+  padding: 0 5px 0 10px;
+  color: var(--second-color);
+  background-color: var(--main-color);
+}
+
+.second-nav .input-group {
+  width: 360px;
+}
+
+.second-nav .search input {
+  height: 38px;
+  outline: none;
+  border: 2px solid #f5f5f5;
+  border-radius: 0;
+}
+
+.second-nav .search input:focus {
+  border-color: var(--main-color);
+  box-shadow: none;
+}
+
+.second-nav .search i {
+  padding: 10px;
+  border: 2px solid #f5f5f5;
+  border-left: 0;
+  box-sizing: border-box;
+  width: 38px;
+  height: 38px;
+}
+
+.second-nav .customer-service span:last-child {
+  color: var(--second-color);
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* third nav */
+.third-nav {
+  height: 65px;
+  background-color: var(--second-color);
+}
+
+.third-nav .nav-items {
+  height: 100%;
+}
+
+.third-nav .selector {
+  width: 260px;
+  background-color: var(--main-color);
+  color: var(--second-color);
+  font-weight: 500;
+}
+
+.third-nav .nav-items ul li {
+  color: #fff;
+}
+
+.active {
+  color: var(--main-color) !important;
+}
+
+.third-nav .nav-notifications span > span {
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 1px 3px;
+  font-size: 0.8rem;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.third-nav .nav-notifications i {
+  color: var(--main-color);
+  margin-right: 5px;
+}
+
+/* carousel */
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.carousel .container {
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.carousel .main-carousel {
+  grid-row: 1/3;
+  height: 460px;
+  overflow: hidden;
+}
+
+.carousel .offer {
+  height: 215px;
+  width: 360px;
+  overflow: hidden;
+}
+
+.carousel .offer .data {
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.carousel .offer .data span:first-child {
+  font-weight: 500;
+}
+
+.carousel .offer .data span:nth-child(2) {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.carousel .offer .data button {
+  color: var(--second-color);
+  outline: none;
+  border: none;
+  background-color: var(--main-color);
+  padding: 5px 12px;
+}
+
+.carousel .offer img {
+  transform: rotate(0deg) scale(1);
+  transition: transform 0.3s ease-out;
+  -webkit-transition: transform 0.3s ease-out;
+  -moz-transition: transform 0.3s ease-out;
+  -ms-transition: transform 0.3s ease-out;
+  -o-transition: transform 0.3s ease-out;
+  -webkit-transform: rotate(0deg) scale(1);
+  -moz-transform: rotate(0deg) scale(1);
+  -ms-transform: rotate(0deg) scale(1);
+  -o-transform: rotate(0deg) scale(1);
+}
+
+.carousel .offer:hover img {
+  transform: rotate(8deg) scale(1.2);
+  transition: transform 0.3s ease-out 0.2s;
+  -webkit-transition: transform 0.3s ease-out 0.2s;
+  -moz-transition: transform 0.3s ease-out 0.2s;
+  -ms-transition: transform 0.3s ease-out 0.2s;
+  -o-transition: transform 0.3s ease-out 0.2s;
+  -webkit-transform: rotate(8deg) scale(1.2);
+  -moz-transform: rotate(8deg) scale(1.2);
+  -ms-transform: rotate(8deg) scale(1.2);
+  -o-transform: rotate(8deg) scale(1.2);
+}
