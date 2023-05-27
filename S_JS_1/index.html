@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <input type="text" placeholder="enter the first number" id="input1">+<input type="text"
+    placeholder="enter the second number" id="input2">
+  <div class="result">result = 0</div>
+
+  <script>
+    const result = document.querySelector('.result')
+    const input1 = document.querySelector('#input1')
+    const input2 = document.querySelector('#input2')
+
+    const add = (num1, num2) => {
+      return `result = ${(parseInt(num1 || 0) || 0) + (parseInt(num2 || 0) || 0)}`
+    }
+
+    //auto add binding
+    input1.addEventListener('keyup', (e) => {
+      result.innerHTML = add(input1.value, input2.value)
+    })
+
+    input2.addEventListener('keyup', (e) => {
+      result.innerHTML = add(input1.value, input2.value)
+    })
+  </script>
+</body>
+
+</html>
