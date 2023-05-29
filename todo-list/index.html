@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="author" content="mohamed elewasy" />
+  <title>Todo list app</title>
+  <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- custom style -->
+  <link rel="stylesheet" href="css/style.css" />
+
+<body>
+  <div class="main-div">
+    <section>
+      <div class="todo tasks-container">
+        <!-- task title -->
+        <div class="todo-title tasks-container-title">
+          <i class="fa-regular fa-clipboard"></i>
+          <span>To-Do</span>
+        </div>
+        <!-- task card -->
+        <div class="todo-body tasks-container-body"></div>
+      </div>
+      <div class="done tasks-container">
+        <!-- task title -->
+        <div class="done-title tasks-container-title">
+          <i class="fa-regular fa-clipboard-check"></i>
+          <span>Done</span>
+        </div>
+        <!-- task card -->
+        <div class="done-body tasks-container-body"></div>
+      </div>
+    </section>
+    <!-- new task button -->
+    <button class="add-task-btn"><i class="fa-solid fa-plus"></i></button>
+    <!-- new task form -->
+    <div class="add-task-container d-none">
+      <input type="text" placeholder="Task title" class="input-title highlight-input-focus" />
+      <div class="input-priority">
+        <button class="input-priority-btn highlight-input-focus">High</button>
+        <div class="input-priority-options d-none">
+          <span>High</span><span>Middle</span><span>Low</span>
+        </div>
+      </div>
+      <div class="controlls">
+        <button class="form-add-task">Add Task</button>
+        <button class="form-close-task">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/task-form.js"></script>
+</body>
+
+</html>

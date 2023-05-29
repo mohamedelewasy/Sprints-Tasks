@@ -1,0 +1,321 @@
+:root {
+  --main-background: #2c43dd;
+  --task-background: #f4f2ff;
+  --all-tasks-background: #d5ccff;
+  --head-color: #2b1887;
+  --priority-high: #e42c5f;
+  --priority-medium: #ecb800;
+  --priority-low: #2d41a7;
+  --priority-none: #d9d9d9;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--main-background);
+  font-family: DM-sans, sans-serif;
+}
+
+.main-div {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.d-none {
+  display: none !important;
+}
+
+.controlls i {
+  cursor: pointer;
+}
+/* priority levels */
+.priority span {
+  background-color: var(--priority-none);
+}
+.priority-high .priority span {
+  background-color: var(--priority-high);
+}
+.priority-high i {
+  color: var(--priority-high);
+}
+.priority-medium .priority span:nth-child(1),
+.priority-medium .priority span:nth-child(2) {
+  background-color: var(--priority-medium);
+}
+.priority-medium i {
+  color: var(--priority-medium);
+}
+.priority-low .priority span:first-child {
+  background-color: var(--priority-low);
+}
+.priority-low i {
+  color: var(--priority-low);
+}
+/* end priority levels */
+
+/* tasks list section */
+.tasks-container {
+  background-color: var(--all-tasks-background);
+  padding: 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 348px;
+  height: 465px;
+  box-sizing: border-box;
+}
+
+.tasks-container .tasks-container-title {
+  background-color: var(--all-tasks-background);
+  width: fit-content;
+  padding: 4px;
+  border-radius: 16px;
+  display: flex;
+  gap: 12px;
+  color: var(--head-color);
+  font-size: 32px;
+  max-width: 465px;
+  font-weight: 600;
+}
+
+.tasks-container .tasks-container-title i {
+  font-weight: 600;
+}
+
+.tasks-container .tasks-container-body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+  max-height: 348px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+.tasks-container .tasks-container-body::-webkit-scrollbar {
+  display: none;
+}
+
+.done .done-body .controlls i:first-child {
+  display: none;
+}
+/* end tasks list section */
+
+/* task card */
+.task {
+  background-color: var(--task-background);
+  width: 300px;
+  height: 100px;
+  border-radius: 12px;
+  padding: 24px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.task .title {
+  font-size: 24px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.task .priority span {
+  /* background-color: #e42c5f; */
+  display: inline-block;
+  border-radius: 0 4px 4px 24px;
+  width: 24px;
+  height: 12px;
+  margin: 12px 0;
+}
+
+.task .priority span:nth-child(2) {
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+.task .controlls {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+}
+
+.task .controlls i {
+  font-size: 1.2rem;
+  padding: 2px;
+}
+/* end task card */
+
+/* section */
+section {
+  display: flex;
+  gap: 24px;
+  width: 720px;
+  height: 465px;
+  position: absolute;
+  transform: translate(calc((100vw - 720px) / 2), calc((100vh - 465px) / 2));
+  -webkit-transform: translate(
+    calc((100vw - 720px) / 2),
+    calc((100vh - 465px) / 2)
+  );
+  -moz-transform: translate(
+    calc((100vw - 720px) / 2),
+    calc((100vh - 465px) / 2)
+  );
+  -ms-transform: translate(
+    calc((100vw - 720px) / 2),
+    calc((100vh - 465px) / 2)
+  );
+  -o-transform: translate(calc((100vw - 720px) / 2), calc((100vh - 465px) / 2));
+}
+/* add task btn */
+.add-task-btn {
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  box-sizing: border-box;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--task-background);
+  font-size: 1.4rem;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.add-task-btn:hover {
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  background-color: var(--all-tasks-background);
+  cursor: pointer;
+}
+
+/* add task form */
+.add-task-container {
+  display: flex;
+  background-color: white;
+  padding: 24px;
+  border-radius: 16px;
+  flex-direction: column;
+  gap: 24px;
+  width: 348px;
+  height: 225px;
+  box-sizing: border-box;
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 5px 1px var(--head-color);
+  -webkit-border-radius: 16px;
+  -moz-border-radius: 16px;
+  -ms-border-radius: 16px;
+  -o-border-radius: 16px;
+}
+
+.highlight-input-focus:focus {
+  box-shadow: 0 0 3px 0px var(--head-color);
+}
+
+.add-task-container .input-title {
+  height: 36px;
+  outline: none;
+  border: 1px solid #eee;
+  padding-inline-start: 16px;
+  padding-inline-end: 16px;
+  text-align: center;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.add-task-container .input-priority {
+  position: relative;
+}
+.add-task-container .input-priority-btn {
+  border: 1px solid #eee;
+  height: 36px;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.add-task-container .input-priority-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  top: 36px;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  text-align: center;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  box-shadow: 0 0 3px 0px var(--head-color);
+}
+.add-task-container .input-priority-options span {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.add-task-container .input-priority-options span:first-child {
+  margin-top: 10px;
+}
+
+.add-task-container .input-priority-options span:last-child {
+  margin-bottom: 10px;
+}
+
+.add-task-container .controlls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.add-task-container .controlls button {
+  background-color: white;
+  border: 1px solid #eee;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.add-task-container .controlls .form-add-task {
+  background-color: var(--main-background);
+}
+
+.add-task-container .controlls .form-close-task {
+  background-color: rgb(248, 42, 42);
+}
