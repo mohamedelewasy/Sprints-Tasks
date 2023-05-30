@@ -29,11 +29,11 @@ priorityFormOptionsDiv.childNodes.forEach((option) => {
 
 // handle add new task button
 addTaskFormBtn.addEventListener("click", () => {
-  var title = document.querySelector(".input-title").value;
+  var title = document.querySelector(".input-title").value.trim();
   const priorityType = priorityFormSelector.innerHTML;
-  if (title.length > 25) {
+  if (!(title.length > 0 && title.length < 26)) {
     alert(
-      `task title must be at most 25 characters and you entered ${title.length} character!`
+      `task title must be between 1:25 characters and you entered ${title.length} character!`
     );
     return;
   }
