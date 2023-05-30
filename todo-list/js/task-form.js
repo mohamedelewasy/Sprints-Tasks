@@ -31,10 +31,13 @@ priorityFormOptionsDiv.childNodes.forEach((option) => {
 addTaskFormBtn.addEventListener("click", () => {
   var title = document.querySelector(".input-title").value;
   const priorityType = priorityFormSelector.innerHTML;
-  if (title.length > 25)
+  if (title.length > 25) {
     alert(
       `task title must be at most 25 characters and you entered ${title.length} character!`
     );
+    return;
+  }
+
   toDoTasks.push({
     id: Date.now(),
     title,
@@ -42,5 +45,6 @@ addTaskFormBtn.addEventListener("click", () => {
   });
   handleTasksListItems();
   newTaskForm.classList.toggle("d-none");
-  localStorage.setItem("tasks", JSON.stringify({toDoTasks, doneTasks}))
+  document.querySelector(".input-title").value = '';
+  localStorage.setItem("tasks", JSON.stringify({ toDoTasks, doneTasks }));
 });
