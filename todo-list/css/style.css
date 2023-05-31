@@ -4,7 +4,7 @@
   --all-tasks-background: #d5ccff;
   --head-color: #2b1887;
   --priority-high: #e42c5f;
-  --priority-medium: #ecb800;
+  --priority-middle: #ecb800;
   --priority-low: #2d41a7;
   --priority-none: #d9d9d9;
 }
@@ -39,12 +39,12 @@ body {
 .priority-high i {
   color: var(--priority-high);
 }
-.priority-medium .priority span:nth-child(1),
-.priority-medium .priority span:nth-child(2) {
-  background-color: var(--priority-medium);
+.priority-middle .priority span:nth-child(1),
+.priority-middle .priority span:nth-child(2) {
+  background-color: var(--priority-middle);
 }
-.priority-medium i {
-  color: var(--priority-medium);
+.priority-middle i {
+  color: var(--priority-middle);
 }
 .priority-low .priority span:first-child {
   background-color: var(--priority-low);
@@ -207,7 +207,7 @@ section {
 }
 
 /* add task form */
-.add-task-container {
+.form-task-container {
   display: flex;
   background-color: white;
   padding: 24px;
@@ -233,7 +233,7 @@ section {
   box-shadow: 0 0 3px 0px var(--head-color);
 }
 
-.add-task-container .input-title {
+.form-task-container .input-title {
   height: 36px;
   outline: none;
   border: 1px solid #eee;
@@ -248,19 +248,20 @@ section {
   -o-border-radius: 8px;
 }
 
-.add-task-container .input-priority {
+.form-task-container .input-priority {
   position: relative;
 }
-.add-task-container .input-priority-btn {
+.form-task-container .input-priority-btn {
   border: 1px solid #eee;
   height: 36px;
   text-align: center;
   background-color: white;
   border-radius: 8px;
   width: 100%;
+  cursor: pointer;
 }
 
-.add-task-container .input-priority-options {
+.form-task-container .input-priority-options {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -277,28 +278,28 @@ section {
   -o-border-radius: 8px;
   box-shadow: 0 0 3px 0px var(--head-color);
 }
-.add-task-container .input-priority-options span {
+.form-task-container .input-priority-options span {
   display: inline-block;
   cursor: pointer;
   font-size: 0.8rem;
 }
 
-.add-task-container .input-priority-options span:first-child {
+.form-task-container .input-priority-options span:first-child {
   margin-top: 10px;
 }
 
-.add-task-container .input-priority-options span:last-child {
+.form-task-container .input-priority-options span:last-child {
   margin-bottom: 10px;
 }
 
-.add-task-container .controlls {
+.form-task-container .controlls {
   display: flex;
   justify-content: flex-end;
   gap: 16px;
   margin-top: 16px;
 }
 
-.add-task-container .controlls button {
+.form-task-container .controlls button {
   background-color: white;
   border: 1px solid #eee;
   padding: 10px;
@@ -312,10 +313,10 @@ section {
   -o-border-radius: 8px;
 }
 
-.add-task-container .controlls .form-add-task {
+.form-task-container .controlls .form-add-task {
   background-color: var(--main-background);
 }
 
-.add-task-container .controlls .form-close-task {
+.form-task-container .controlls .form-close-task {
   background-color: rgb(248, 42, 42);
 }

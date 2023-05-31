@@ -43,7 +43,7 @@
     <!-- new task button -->
     <button class="add-task-btn"><i class="fa-solid fa-plus"></i></button>
     <!-- new task form -->
-    <div class="add-task-container d-none">
+    <div class="add-task-container form-task-container  d-none">
       <input type="text" placeholder="Task title" class="input-title highlight-input-focus" />
       <div class="input-priority">
         <button class="input-priority-btn highlight-input-focus">High</button>
@@ -56,10 +56,25 @@
         <button class="form-close-task">Close</button>
       </div>
     </div>
+
+    <div class="edit-task-container form-task-container d-none">
+      <input type="text" placeholder="Task title" class="input-title input-edit-title highlight-input-focus" />
+      <div class="input-priority input-edit-priority">
+        <button class="input-priority-btn input-edit-priority-btn highlight-input-focus">High</button>
+        <div class="input-priority-options input-edit-priority-options d-none">
+          <span>High</span><span>Middle</span><span>Low</span>
+        </div>
+      </div>
+      <div class="controlls">
+        <button class="form-add-task form-edit-task">Edit Task</button>
+        <button class="form-close-task form-edit-close-task">Close</button>
+      </div>
+    </div>
   </div>
 
   <script type="module" src="js/main.js"></script>
-  <script type="module" src="js/task-form.js"></script>
+  <script type="module" src="js/add-task-form.js"></script>
+  <script type="module" src="js/edit-task-form.js"></script>
 </body>
 
 </html>

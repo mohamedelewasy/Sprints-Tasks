@@ -1,5 +1,4 @@
-import { toDoTasks, doneTasks, handleTasksListItems } from "./main.js";
-import { getPriorityNumber } from "./utils.js";
+import { addTask } from "./utils.js";
 
 const newTaskForm = document.querySelector(".add-task-container");
 const closeTaskFormBtn = document.querySelector(".form-close-task");
@@ -29,22 +28,9 @@ priorityFormOptionsDiv.childNodes.forEach((option) => {
 
 // handle add new task button
 addTaskFormBtn.addEventListener("click", () => {
-  var title = document.querySelector(".input-title").value.trim();
-  const priorityType = priorityFormSelector.innerHTML;
-  if (!(title.length > 0 && title.length < 26)) {
-    alert(
-      `task title must be between 1:25 characters and you entered ${title.length} character!`
-    );
-    return;
-  }
-
-  toDoTasks.push({
-    id: Date.now(),
-    title,
-    priority: getPriorityNumber(priorityType),
-  });
-  handleTasksListItems();
+  var title = document.querySelector(".input-title").value;
+  const priority = priorityFormSelector.innerHTML;
+  addTask(title, priority, "todo");
   newTaskForm.classList.toggle("d-none");
-  document.querySelector(".input-title").value = '';
-  localStorage.setItem("tasks", JSON.stringify({ toDoTasks, doneTasks }));
+  document.querySelector(".input-title").value = "";
 });
