@@ -17,12 +17,16 @@ const getTaskIdFromEventParent = (event) => {
   return event.target.parentNode.parentNode.id;
 };
 
+const getPriorityNumber = (priority) =>{
+  return priority === 'high' ? 0 : (priority === 'middle' ? 1 : 2)
+}
+
 export const addTask = (title, priority, state) => {
   if (!isValidTitle(title)) return;
   tasks.push({
     id: Date.now(),
     title: title.trim(),
-    priority: priority.toLowerCase(),
+    priority: getPriorityNumber(priority.toLowerCase()),
     state,
   });
   fillAllTasks();
@@ -40,7 +44,7 @@ export const editTask = (id, title, priority) => {
   if (!isValidTitle(title)) return;
   const taskIndex = searchForTaskIndex(id);
   tasks[taskIndex].title = title.trim();
-  tasks[taskIndex].priority = priority.toLowerCase();
+  tasks[taskIndex].priority = getPriorityNumber(priority.toLowerCase());
   fillAllTasks();
   updateLocalStorage();
 };
@@ -67,6 +71,10 @@ const isValidTitle = (title) => {
   return true;
 };
 
+const sortByPriority = ()=>{
+  tasks = tasks.sort((a, b)=>{a.priority - b.priority})
+}
+
 export const updateLocalStorage = () => {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
@@ -92,6 +100,7 @@ const getTaskHtmlElement = (el) => {
 };
 
 export const fillAllTasks = () => {
+  // sortByPriority();
   const todoTasksList = document.querySelector(".todo-body");
   const doneTasksList = document.querySelector(".done-body");
 

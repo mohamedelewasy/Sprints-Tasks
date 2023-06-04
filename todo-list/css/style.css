@@ -33,23 +33,23 @@ body {
 .priority span {
   background-color: var(--priority-none);
 }
-.priority-high .priority span {
+.priority-0 .priority span {
   background-color: var(--priority-high);
 }
-.priority-high i {
+.priority-0 i {
   color: var(--priority-high);
 }
-.priority-middle .priority span:nth-child(1),
-.priority-middle .priority span:nth-child(2) {
+.priority-1 .priority span:nth-child(1),
+.priority-1 .priority span:nth-child(2) {
   background-color: var(--priority-middle);
 }
-.priority-middle i {
+.priority-1 i {
   color: var(--priority-middle);
 }
-.priority-low .priority span:first-child {
+.priority-2 .priority span:first-child {
   background-color: var(--priority-low);
 }
-.priority-low i {
+.priority-2 i {
   color: var(--priority-low);
 }
 /* end priority levels */
