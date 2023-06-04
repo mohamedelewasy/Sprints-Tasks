@@ -71,10 +71,6 @@ const isValidTitle = (title) => {
   return true;
 };
 
-const sortByPriority = ()=>{
-  tasks = tasks.sort((a, b)=>{a.priority - b.priority})
-}
-
 export const updateLocalStorage = () => {
   localStorage.setItem("tasks", JSON.stringify(tasks));
 };
@@ -100,7 +96,7 @@ const getTaskHtmlElement = (el) => {
 };
 
 export const fillAllTasks = () => {
-  // sortByPriority();
+  tasks.sort((a,b)=>a.priority-b.priority)
   const todoTasksList = document.querySelector(".todo-body");
   const doneTasksList = document.querySelector(".done-body");
 
