@@ -51,6 +51,7 @@ export const editTask = (id, title, priority) => {
 
 const deleteTask = (id) => {
   const taskIndex = searchForTaskIndex(id);
+  taskTitles.delete(tasks[taskIndex].title)
   tasks.splice(taskIndex, 1);
   fillAllTasks();
   updateLocalStorage();
