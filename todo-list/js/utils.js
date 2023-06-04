@@ -1,5 +1,7 @@
 import { tasks } from "./main.js";
 
+let taskTitles = new Set();
+
 const searchForTaskIndex = (id) => {
   let targetTaskIndex;
   for (let i = 0; i < tasks.length; i++) {
@@ -58,6 +60,10 @@ const isValidTitle = (title) => {
     );
     return false;
   }
+  if(taskTitles.has(title)){
+    alert(`${title} is already exists`)
+    return false;
+  }
   return true;
 };
 
@@ -66,7 +72,9 @@ export const updateLocalStorage = () => {
 };
 
 export const getFromLocalStorage = () => {
-  return JSON.parse(localStorage.getItem("tasks"));
+  const tasks = JSON.parse(localStorage.getItem("tasks"));
+  taskTitles = new Set(tasks.map(el=>el.title))
+  return tasks
 };
 
 const getTaskHtmlElement = (el) => {
