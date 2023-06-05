@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .container {
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    form {
+      margin: 10px auto;
+      width: fit-content;
+    }
+
+    th,
+    td {
+      padding: 5px;
+      min-width: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <table border="1">
+      <thead>
+        <th>select</th>
+        <th>title</th>
+        <th>priority</th>
+        <th>state</th>
+        <th>actions</th>
+      </thead>
+      <tbody class="table-body">
+      </tbody>
+      <tfoot>
+        <td></td>
+        <td><input type="text" class="title-input" placeholder="task name" /></td>
+        <td><input type="number" class="priority-input" placeholder="task priority" /></td>
+        <td>todo</td>
+        <td><button type="submit" class="add-input">add task</button></td>
+      </tfoot>
+    </table>
+  </div>
+  <script type="module" src="js/task.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
