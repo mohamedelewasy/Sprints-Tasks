@@ -2,6 +2,7 @@ import { fetchData } from "../../fetch";
 import { env } from "../../environment/env";
 import { endpoints } from "../../types/endpoints";
 import { userContext } from "../../auth/userContext";
+import { loginReq, loginRes } from "../../types/api";
 
 const signinBtn = document.querySelector(".signin-btn") as HTMLButtonElement;
 const emailInput = document.querySelector(
@@ -20,10 +21,7 @@ signinBtn.addEventListener("click", async () => {
   const password = passwordInput.value;
 
   try {
-    const res = await fetchData<
-      { email: string; password: string },
-      { token: string }
-    >({
+    const res = await fetchData<loginReq, loginRes>({
       url: env.API + endpoints.loginUser.url,
       method: endpoints.loginUser.method,
       body: { email, password },
