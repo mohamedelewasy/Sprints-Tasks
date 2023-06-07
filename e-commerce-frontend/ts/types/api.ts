@@ -10,3 +10,15 @@ export type registerReq = {
 export type registerRes = {
   token: string;
 };
+
+export interface Icategory {
+  _id: string;
+  name: string;
+  image: string;
+  productCount: number;
+}
+
+export type getCategoriesReq = undefined;
+export type getCategoriesRes = {
+  data: [Icategory];
+};
