@@ -37,3 +37,6 @@ export type getCategoriesRes = { data: [Icategory] };
 
 export type getFeaturedReq = undefined;
 export type getFeaturedRes = { data: [Iproduct] };
+
+export type getRecentReq = undefined;
+export type getRecentRes = { data: [Iproduct] };

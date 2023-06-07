@@ -13,7 +13,9 @@ const handleFeaturedProducts = (products: [Iproduct]) => {
   <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
         <div class="product-item bg-light mb-4">
           <div class="product-img position-relative overflow-hidden">
-            <img class="img-fluid w-100" src="img/product-1.jpg" alt="" />
+            <img class="img-fluid w-100" ${
+              prod.image ? `src="${prod.image.slice(6)}"` : ""
+            } alt="" />
             <div class="product-action">
               <a class="btn btn-outline-dark btn-square" href="#"
                 onclick="addSingleProductToCart({id:1,name:'product-1',price:123,image:'/img/product-1.jpg'})"><i
