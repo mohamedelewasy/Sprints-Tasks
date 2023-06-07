@@ -20,21 +20,6 @@ export const fetchData = async <Request, Response>(
     });
     return res.data;
   } catch (error) {
-    throw new Error(
-      ((error as AxiosError).response?.data as { message: string }).message
-    );
+    throw new Error((error as AxiosError).response?.data as string);
   }
 };
-
-(async () => {
-  try {
-    const res = await fetchData<undefined, unknown>({
-      url: "https://api.storerestapi.com/products/running-sneaker",
-      method: "get",
-      body: undefined,
-    });
-    console.log(res);
-  } catch (error) {
-    console.log(error.message);
-  }
-})();
