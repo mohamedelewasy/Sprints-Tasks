@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <% for (let category of data) {%>
+    <img src="<%= category.image %>" width=64 height=64 alt=""><br>
+    <strong>category id: <%= category.id %></strong><br>
+    <strong>category name: <%= category.name %></strong>
+    <ul>
+      <% if (!category.products) category.products=[] %>
+        <% for (let product of category.products){ %>
+          <li>
+            id: <%= product.id %>
+          </li>
+          <ul>
+            <li>
+              title: <%= product.title %>
+            </li>
+            <li>
+              description: <%= product.description %>$
+            </li>
+            <li>
+              price in dollars: <%= product.price %>$
+            </li>
+            <li>
+              <% for (let imgSrc of product.images){ %>
+                <img src="<%= imgSrc %>" width="64" height="64" alt="">
+                <% } %>
+            </li>
+          </ul>
+          <% } %>
+    </ul>
+    <hr>
+    <% } %>
+</body>
+
+</html>
