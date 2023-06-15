@@ -39,7 +39,7 @@ const getProducts = async (): Promise<Icategory[]> => {
     "https://api.escuelajs.co/api/v1/categories/"
   );
 
-  const egp = await await getCurrency();
+  const egp = await getCurrency();
 
   const products = <Iproduct[]>productsRequest.data;
   const categories = <Icategory[]>categoriesRequest.data;
@@ -73,7 +73,3 @@ app.get("/json", async (req, res) => {
 app.listen(3000, () =>
   console.log("press to view result: http://localhost:3000/")
 );
-
-// <%for (let i = 0; i < data.length; i++) {%>
-//   <p><%= data[i] %></p>
-// <%}%>
