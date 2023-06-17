@@ -29,11 +29,7 @@ export const getProductsMiddleware = async (
   url: URL
 ) => {
   const baseCurrency = url.searchParams.get("cur") || "USD";
-  if (baseCurrency === "EGP") {
-    res.statusCode = 400;
-    res.statusMessage = "INVALID CUR";
-    res.end();
-  }
+
   const currency = await axios.get(`${currencyAPI}?base=${baseCurrency}`);
   // validate currency
   if (currency.data.base.toLowerCase() != baseCurrency.toLowerCase()) {
@@ -46,7 +42,7 @@ export const getProductsMiddleware = async (
   const formatedProducts = getProducts(
     products.data,
     categories.data,
-    currency.data.rates.EGP
+    baseCurrency.toLowerCase() === "egp" ? 1 : currency.data.rates.EGP
   );
   res.writeHead(200, { "Content-Type": "application/json" });
   res.write(JSON.stringify(formatedProducts));
