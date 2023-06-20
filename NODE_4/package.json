@@ -1,0 +1,23 @@
+{
+  "name": "node_4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.ts",
+  "scripts": {
+    "start": "nodemon src/server.ts"
+  },
+  "keywords": [],
+  "author": "mohamed elewasy",
+  "license": "ISC",
+  "dependencies": {
+    "@types/morgan": "^1.9.4",
+    "axios": "^1.4.0",
+    "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
+    "morgan": "^1.10.0",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17"
+  }
+}
