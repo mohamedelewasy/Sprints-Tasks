@@ -1,5 +1,3 @@
-import axios, { Axios, AxiosError } from "axios";
-import AsyncHandler from "express-async-handler";
 import { productModel } from "../models/products.model";
 import { RequestHandler } from "express";
 import { Iproduct } from "../types/schema";
