@@ -1,4 +1,5 @@
 node_modules
 .todo
 .env
+/NODE_final/.env
 
