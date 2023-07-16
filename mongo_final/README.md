@@ -5,7 +5,7 @@ database schema and API routes can be found in [requirements](./requirements.md)
 - clone this repo
 - open `/Sprints-Tasks/mongo_final`
 - `npm install` to install dependencies
-- `npm run start:dev` to run the app
+- `npm run start` to run the app
 
 ## setup for .env file but it is not required
 ```
