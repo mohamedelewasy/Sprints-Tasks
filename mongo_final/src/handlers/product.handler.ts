@@ -19,7 +19,11 @@ export const create = AsyncHandler(async (req, res) => {
 export const update = AsyncHandler(async (req, res) => {
   res
     .status(200)
-    .json(await Products.findByIdAndUpdate(req.params.id, req.body));
+    .json(
+      await Products.findByIdAndUpdate(req.params.id, req.body, {
+        runValidators: true,
+      })
+    );
 });
 
 export const remove = AsyncHandler(async (req, res) => {

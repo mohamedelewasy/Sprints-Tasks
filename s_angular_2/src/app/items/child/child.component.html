@@ -1,0 +1,21 @@
+<h3>Child Form</h3>
+<div class="">
+  <label for="formNumber">form number: </label>
+  <input
+    type="text"
+    id="formNumber"
+    [value]="formId"
+    (keyup)="updateFormId.emit($any($event.target).value)"
+  />
+</div>
+<p><strong>User Name: </strong>{{ name }}</p>
+<p><strong>User Age: </strong>{{ age }}</p>
+<div class="">
+  <label for="color">color: </label>
+  <input
+    type="text"
+    id="color"
+    [value]="color"
+    (keyup)="colorItem.emit($any($event.target).value)"
+  />
+</div>

@@ -1,0 +1,51 @@
+<h3>Parent Form</h3>
+<div class="form-element">
+  <label for="formNumber">form number:</label>
+  <input
+    type="text"
+    [value]="formNumber"
+    id="formNumber"
+    (keyup)="formNumber = $any($event.target).value"
+  />
+</div>
+<div class="form-element">
+  <label for="firstName">first name:</label>
+  <input
+    type="text"
+    [value]="firstName"
+    id="firstName"
+    (keyup)="firstName = $any($event.target).value"
+  />
+</div>
+<div class="form-element">
+  <label for="lastName">last name:</label>
+  <input
+    type="text"
+    [value]="lastName"
+    id="lastName"
+    (keyup)="lastName = $any($event.target).value"
+  />
+</div>
+<div class="form-element">
+  <label for="age">age:</label>
+  <input
+    type="number"
+    [value]="age"
+    id="age"
+    (keyup)="age = $any($event.target).value"
+  />
+</div>
+<div class="form-element">
+  <label for="color">color:</label>
+  <input type="text" [value]="color" disabled />
+</div>
+
+<hr />
+
+<app-child
+  [name]="firstName + ' ' + lastName"
+  [age]="age"
+  (colorItem)="color = $event"
+  [formId]="formNumber"
+  (updateFormId)="formNumber = $event"
+></app-child>

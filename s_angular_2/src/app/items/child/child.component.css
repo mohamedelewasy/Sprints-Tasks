@@ -1,0 +1,9 @@
+label{
+  display: inline-block;
+  min-width: 100px;
+}
+
+strong{
+  display: inline-block;
+  min-width: 100px;
+}
